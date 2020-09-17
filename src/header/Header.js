@@ -6,7 +6,7 @@ function Header() {
   return (
     <header>
       <div className='horz-holder'>
-        <h1>CoVid-Tracker</h1>
+        <h1 className='title'>CoVid-Tracker</h1>
         {/* <button  className='return-home-btn' type='button'>  */}
           <img className='logo' src={virus} alt='virus'/>
         {/* </button> */}
