@@ -2,11 +2,17 @@ header {
   background: #1d3557;
   color: #f1faee;
   font-family: 'Playfair Display SC', serif;
-
+  height: 9em;
 }
 
+.title {
+  padding: 0em 1em;
+    font-size: 3em;
+}
 .logo {
   height: 200px;
+      height: 8em;
+    padding: 1em;
   
 }
 
