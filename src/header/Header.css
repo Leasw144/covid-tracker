@@ -1,0 +1,15 @@
+header {
+  background: #1d3557;
+  color: #f1faee;
+  font-family: 'Playfair Display SC', serif;
+
+}
+
+.logo {
+  height: 200px;
+}
+
+.horz-holder {
+  display: flex;
+  justify-content: space-between
+}
