@@ -6,13 +6,24 @@ import './App.css';
 
 import Header from '../header/Header';
 import Navigation from '../navigation/Navigation';
-
+import { getSummary } from '../helpers/apiCalls'
 
 class App extends Component {
   constructor() {
     super() 
     this.state = {
-      allCountries: []
+      allCountries: [],
+      error: ''
+    }
+  }
+
+  componentDidMount = async () => {
+    console.log('app mounted')
+    try {
+      const summary = await getSummary()
+      this.setState({allCountries: summary})
+    } catch(error) {
+      this.setState({error: error})
     }
   }
 
