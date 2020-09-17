@@ -13,6 +13,7 @@ class App extends Component {
     super() 
     this.state = {
       allCountries: [],
+      global: {},
       error: ''
     }
   }
@@ -21,7 +22,9 @@ class App extends Component {
     console.log('app mounted')
     try {
       const summary = await getSummary()
-      this.setState({allCountries: summary})
+      console.log('summary', summary)
+      this.setState({allCountries: summary.Countries, global: summary.Global })
+      console.log(this.state)
     } catch(error) {
       this.setState({error: error})
     }
@@ -34,7 +37,7 @@ class App extends Component {
         <Header />
         
         <section className="main-display">
-          <Navigation />
+          <Navigation countries={this.state.allCountries} />
           <div className="content">
             <img src={logo} className="App-logo" alt="logo" />
             <p>
