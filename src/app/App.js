@@ -4,13 +4,21 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import logo from '../assets/logo.svg';
 import './App.css';
 
-class App extends Component {
+import Header from '../header/Header'
 
-  
+class App extends Component {
+  constructor() {
+    super() 
+    this.state = {
+      allCountries: []
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
+
+      <main className="App">
+        <Header />
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
@@ -23,8 +31,7 @@ class App extends Component {
           >
             FUCKING HERE WE FUCKING GO
           </a>
-        </header>
-      </div>
+      </main>
     );
   }
 }
