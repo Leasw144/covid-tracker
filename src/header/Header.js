@@ -7,9 +7,9 @@ function Header() {
     <header>
       <div className='horz-holder'>
         <h1>CoVid-Tracker</h1>
-        <button  className='return-home-btn' type='button'> 
+        {/* <button  className='return-home-btn' type='button'>  */}
           <img className='logo' src={virus} alt='virus'/>
-        </button>
+        {/* </button> */}
       </div>
     </header>
   )
