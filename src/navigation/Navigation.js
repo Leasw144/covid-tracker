@@ -14,11 +14,18 @@ class Navigation extends Component {
   // componentDidMount() {
   //   this.setState({ goToCountry:})
   // }
+  findCountry = () => {
+    this.props.country = this.state.goToCountry
 
-  handleChange(e) {
-    this.setState({ goToCountry: [e.target.value] })
+  }
+  handleChange = (e) => {
+    console.log('this', this)
+    this.setState({ goToCountry: e.target.value })
   }
 
+  goToCountry() {
+
+  }
   render() {
     let countryNames = this.props.countries.reduce((countryList, country) => {
       countryList.push(country.Country)
@@ -44,7 +51,8 @@ class Navigation extends Component {
             {renderedCountryList}
           </select>
           <Link to='/details'>
-            <button type='button' className='submit'>submit</button>
+            <button type='button' className='submit' onClick={this.goToCountry}>submit</button>
+            {/* on click, reassign the value of prop that contains country of interest to the state of goToCountry */}
           </Link>
         </form>
 
