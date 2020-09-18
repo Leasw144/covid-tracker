@@ -15,7 +15,7 @@ class App extends Component {
     this.state = {
       allCountries: [],
       global: {},
-      countryOfInterest:'',
+      countryOfInterest:{},
       error: ''
     }
   }
@@ -31,6 +31,13 @@ class App extends Component {
       this.setState({error: error})
     }
   }
+  goToCountry = (value) => {
+    const country = this.state.allCountries.find(country => country.Country === value)
+  
+    this.setState({ countryOfInterest: country })
+
+
+  }
 
   render() {
     return (
@@ -39,7 +46,10 @@ class App extends Component {
         <Header />
         
         <section className="main-display">
-          <Navigation countries={this.state.allCountries} country={this.state.countryOfInterest}/>
+          <Navigation 
+            // key='1'
+            countries={this.state.allCountries} 
+            goToCountry={this.goToCountry}/>
           <div className="content">
             <Switch>
               <Route 
@@ -47,7 +57,7 @@ class App extends Component {
                 render={() => {
                   return (
                     <DetailsPage
-                      country='this.state.countryOfInterest'
+                      country={this.state.countryOfInterest}
                     />
                   )
                 }}
