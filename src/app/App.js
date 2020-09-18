@@ -6,6 +6,7 @@ import './App.css';
 
 import Header from '../header/Header';
 import Navigation from '../navigation/Navigation';
+import DetailsPage from '../detailsPage/DetailsPage'
 import { getSummary } from '../helpers/apiCalls'
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
     this.state = {
       allCountries: [],
       global: {},
+      countryOfInterest:'',
       error: ''
     }
   }
@@ -37,20 +39,21 @@ class App extends Component {
         <Header />
         
         <section className="main-display">
-          <Navigation countries={this.state.allCountries} />
+          <Navigation countries={this.state.allCountries} country={this.state.countryOfInterest}/>
           <div className="content">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              >
-              FUCKING HERE WE FUCKING GO
-            </a>
+            <Switch>
+              <Route 
+                exact path='/details' 
+                render={() => {
+                  return (
+                    <DetailsPage
+                      country='this.state.countryOfInterest'
+                    />
+                  )
+                }}
+              />
+
+            </Switch>
           </div>
         </section>
       </main>
