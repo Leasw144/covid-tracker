@@ -7,7 +7,7 @@ class Navigation extends Component {
   constructor(props) {
     super()
     this.state = {
-      goToCountry: ''
+      country: 'Afghanistan'
     }
   }
 
@@ -19,22 +19,22 @@ class Navigation extends Component {
 
   }
   handleChange = (e) => {
-    console.log('this', this)
-    this.setState({ goToCountry: e.target.value })
-  }
-
-  goToCountry() {
+    this.setState({ country: e.target.value })
 
   }
+  
+
   render() {
+    let counter = 0
     let countryNames = this.props.countries.reduce((countryList, country) => {
+      
       countryList.push(country.Country)
       return countryList
     }, [])
 
     let renderedCountryList = countryNames.map(country => {
       return (
-        <option value={country}>{country}</option>
+        <option key={counter++} value={country}>{country}</option>
       )
     })
     return (
@@ -48,10 +48,11 @@ class Navigation extends Component {
             value={this.state.goToCountry} 
             onChange={this.handleChange}
           >
+            {/* <option key='0' value={null}>pick a country</option> */}
             {renderedCountryList}
           </select>
           <Link to='/details'>
-            <button type='button' className='submit' onClick={this.goToCountry}>submit</button>
+            <button type='button' className='submit' onClick={() => this.props.goToCountry(this.state.country)}>submit</button>
             {/* on click, reassign the value of prop that contains country of interest to the state of goToCountry */}
           </Link>
         </form>
