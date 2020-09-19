@@ -9,7 +9,9 @@
     margin: 3em;
     border-style: outset;
     justify-content: space-between;
+        min-width: 36em;
 }
+
 
  .country-code {
        font-size: 0.50em;

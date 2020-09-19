@@ -14,6 +14,10 @@ function AllCountries (props) {
     console.log('watchlist', props.watchList)
     countryCards = countries.map(country => {
       let watched;
+      if(props.watchList) {
+        watched = props.watchList.find(watched => country.Country === watched.Country);
+      }
+      // console.log('watched', watched)
       
       console.log('country', country.Country)
       return (
@@ -26,11 +30,12 @@ function AllCountries (props) {
           </section>
           <section className="button-holder">
            
-              <button type="button" className="card-btn" onClick={() => props.addToWatch(country.Country)}>
+            <div className={watched ? 'active' : null}>
+              <button type="button" className='card-btn' onClick={() => props.addToWatch(country.Country)}>
                 <img src={eye} alt='virus' />
               </button>
-            
-        
+            </div>
+  
          
             <Link to='/details'>
               <button className="card-btn" type='button' onClick={() => props.goToCountry(country.Country)}>
