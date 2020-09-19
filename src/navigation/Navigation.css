@@ -4,6 +4,8 @@
   margin: 3em;
     padding: 1.5em;
     height: 29em;
+    max-width: 13em;
+        border-radius: 5px;
 }
 
 a {
