@@ -4,7 +4,11 @@ import eye from '../assets/eye.svg'
 
 function DetailsPage(props) {
   console.log('your props', props)
+  let watched;
   let countryStats = props.country
+  if(props.watchList) {
+    watched = props.watchList.find(country => country.Country === countryStats.Country)
+  }
   if (countryStats.CountryCode) {
   return (
     <article className="country-info">
@@ -25,9 +29,11 @@ function DetailsPage(props) {
       <br />
       <div className='eye-area'>
         <h4>Add this Country to Your Watch List</h4>
-        <button type="button" className="card-btn" onClick={() => props.addToWatch(countryStats.Country)}>
-          <img className='eye' src={eye} alt='virus' />
-        </button>
+          <div className={watched ? 'active' : null} >
+            <button type="button" className='card-btn active' onClick={() => props.addToWatch(countryStats.Country)}>
+              <img className='eye' src={eye} alt='virus' />
+            </button>
+          </div>
       </div>
     </article>
   )
