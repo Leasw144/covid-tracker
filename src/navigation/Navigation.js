@@ -42,9 +42,11 @@ class Navigation extends Component {
       <article className='nav-bar'>
         <h2>Resources</h2>
         <Link to='allcountries'>
-        <button type='button' className='all-countries' >Go to All Countries</button>
+          <button type='button' className='all-countries' >Go to All Countries</button>
         </Link>
-
+        <Link to='/watchlist'>
+          <button type='button' >Go to Watch List</button>
+        </Link>
         <form className='form' >
           <select 
             name='country-select' 
