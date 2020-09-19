@@ -18,7 +18,8 @@ class App extends Component {
       allCountries: [],
       global: {},
       countryOfInterest:{},
-      error: ''
+      error: '',
+      watchList: []
     }
   }
 
@@ -35,12 +36,25 @@ class App extends Component {
   }
   goToCountry = (value) => {
     const country = this.state.allCountries.find(country => country.Country === value)
-  
     this.setState({ countryOfInterest: country })
-
-
   }
 
+  addToWatch = (value) => {
+    const watchedCountry = this.checkDups(value)
+    if(!watchedCountry) {
+      const country = this.state.allCountries.find(country => country.Country === value)
+      this.setState({ watchList: [...this.state.watchList, country]})
+    } else {
+      return false
+    }
+  }
+
+  checkDups(value) {
+    if (this.state.watchList.length > 0) {
+      const country = this.state.watchList.find(country => country.Country === value)
+      return country
+    } 
+  }
   render() {
     return (
 
@@ -51,7 +65,9 @@ class App extends Component {
           <Navigation 
             // key='1'
             countries={this.state.allCountries} 
-            goToCountry={this.goToCountry}/>
+            goToCountry={this.goToCountry}
+          />
+            
           <div className="content">
               {/* <h1>hello world</h1> */}
             <Switch>
@@ -69,6 +85,7 @@ class App extends Component {
                   return (
                     <DetailsPage
                       country={this.state.countryOfInterest}
+                      addToWatch={this.addToWatch}
                     />
                   )
                 }}
@@ -78,7 +95,20 @@ class App extends Component {
               render={() => {
                 return (
                   <AllCountries 
-                    allCountries={this.state.allCountries}
+                    countries={this.state.allCountries}
+                    goToCountry={this.goToCountry} 
+                    addToWatch={this.addToWatch}
+                    watchList={this.state.watchList}
+                  />
+                )
+              }}
+            />
+            <Route 
+              exact path='/watchlist'
+              render={() => {
+                return (
+                  <AllCountries
+                    countries={this.state.watchList}
                     goToCountry={this.goToCountry} />
                 )
               }}
