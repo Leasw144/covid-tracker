@@ -2,8 +2,20 @@
   text-align: center;
   background-color: #f1faee;
   color: #1d3557;
+  
 }
 
+.red {
+      color: #e63946;
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.green {
+      color: #29bf12;
+    font-weight: 900;
+    font-size: 2em;
+} 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
