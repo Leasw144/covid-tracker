@@ -8,6 +8,7 @@ import Header from '../header/Header';
 import Navigation from '../navigation/Navigation';
 import DetailsPage from '../detailsPage/DetailsPage'
 import WelcomePage from '../welcomePage/WelcomePage'
+import AllCountries from '../allCountries/AllCountries.js'
 import { getSummary } from '../helpers/apiCalls'
 
 class App extends Component {
@@ -76,7 +77,9 @@ class App extends Component {
               exact path='/allcountries'
               render={() => {
                 return (
-                  <AllCountries allcountries={this.state.allCountries} />
+                  <AllCountries 
+                    allCountries={this.state.allCountries}
+                    goToCountry={this.goToCountry} />
                 )
               }}
             />
