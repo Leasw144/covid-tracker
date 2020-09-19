@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Navigation.css';
 import { Link } from 'react-router-dom'
 import { render } from 'react-dom';
+import '../assets/virus.svg'
 
 class Navigation extends Component {
   constructor(props) {
@@ -40,7 +41,9 @@ class Navigation extends Component {
     return (
       <article className='nav-bar'>
         <h2>Resources</h2>
-
+        <Link to='allcountries'>
+        <button type='button' className='all-countries' >Go to All Countries</button>
+        </Link>
 
         <form className='form' >
           <select 
@@ -65,6 +68,11 @@ class Navigation extends Component {
             <a href='https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html'>CDC Information on CoVid-19</a>
               <a href='https://www.youtube.com/watch?v=RYUe9XA1fQQ&list=LLIqzPn9ly0xhzdF8HfC6bBw&index=33&ab_channel=JeffNelson'> Official Covid Song of 2020</a>
           </div>
+          <Link to='/'>
+            <button type='button'>
+              <img src='../assets/virus.svg' alt='virus' />
+            </button>
+          </Link>
         
       </article>
     )
