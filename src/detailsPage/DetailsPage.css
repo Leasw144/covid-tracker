@@ -1,12 +1,12 @@
 .country-info {
   border: 1px solid #457b9d;
       margin: 3em;
-          min-width: 40em;
     min-height: 32em;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 2em;
+    max-width: 36em;
 }
 
 p {
@@ -14,7 +14,7 @@ p {
           margin: 0em;
 }
 
-h2 {
+.headline {
   border-bottom: 1px black solid;
     width: 8em;
     align-items: center;
@@ -27,6 +27,15 @@ h2 {
     padding-left: .5em;
     /* padding-top: 0em; */
     margin: .5em;
+}
+
+.eye-area {
+      display: flex;
+    width: 12em;
+}
+
+.eye {
+  width: 3em
 }
 
 .recent-group {
