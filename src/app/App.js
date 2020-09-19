@@ -18,7 +18,7 @@ class App extends Component {
       allCountries: [],
       global: {},
       countryOfInterest:{},
-      error: '',
+      notice: '',
       watchList: []
     }
   }
@@ -31,7 +31,7 @@ class App extends Component {
       this.setState({allCountries: summary.Countries, global: summary.Global })
       console.log(this.state)
     } catch(error) {
-      this.setState({error: error})
+      this.setState({notice: error})
     }
   }
   goToCountry = (value) => {
@@ -44,6 +44,7 @@ class App extends Component {
     if(!watchedCountry) {
       const country = this.state.allCountries.find(country => country.Country === value)
       this.setState({ watchList: [...this.state.watchList, country]})
+      this.setState({ notice: 'Added to Watch List'})
     } else {
       return false
     }
@@ -86,6 +87,7 @@ class App extends Component {
                     <DetailsPage
                       country={this.state.countryOfInterest}
                       addToWatch={this.addToWatch}
+                      watchList={this.state.watchList}
                     />
                   )
                 }}
@@ -99,6 +101,7 @@ class App extends Component {
                     goToCountry={this.goToCountry} 
                     addToWatch={this.addToWatch}
                     watchList={this.state.watchList}
+                    notice={this.state.notice}
                   />
                 )
               }}
@@ -109,7 +112,9 @@ class App extends Component {
                 return (
                   <AllCountries
                     countries={this.state.watchList}
-                    goToCountry={this.goToCountry} />
+                    goToCountry={this.goToCountry} 
+                    addToWatch={this.addToWatch}
+                    />
                 )
               }}
             />

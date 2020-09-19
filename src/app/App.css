@@ -39,6 +39,12 @@
   /* color: white; */
 }
 
+.active {
+       border: 3px green solid;
+    border-radius: 6px;
+    height: fit-content
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -55,3 +61,4 @@
     transform: rotate(360deg);
   }
 }
+
