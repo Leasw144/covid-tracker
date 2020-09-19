@@ -7,6 +7,7 @@ import './App.css';
 import Header from '../header/Header';
 import Navigation from '../navigation/Navigation';
 import DetailsPage from '../detailsPage/DetailsPage'
+import WelcomePage from '../welcomePage/WelcomePage'
 import { getSummary } from '../helpers/apiCalls'
 
 class App extends Component {
@@ -51,7 +52,16 @@ class App extends Component {
             countries={this.state.allCountries} 
             goToCountry={this.goToCountry}/>
           <div className="content">
+              {/* <h1>hello world</h1> */}
             <Switch>
+              <Route 
+                exact path='/' 
+                render={() => {
+                  return (
+                   <WelcomePage global={this.state.global}/>
+                  )
+                }} 
+              />
               <Route 
                 exact path='/details' 
                 render={() => {
@@ -62,7 +72,14 @@ class App extends Component {
                   )
                 }}
               />
-
+            <Route 
+              exact path='/allcountries'
+              render={() => {
+                return (
+                  <AllCountries allcountries={this.state.allCountries} />
+                )
+              }}
+            />
             </Switch>
           </div>
         </section>
