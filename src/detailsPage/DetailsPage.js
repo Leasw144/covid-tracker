@@ -1,6 +1,7 @@
 import React from 'react';
 import './DetailsPage.css'
 import eye from '../assets/eye.svg'
+import PropTypes from 'prop-types'
 
 function DetailsPage(props) {
   console.log('your props', props)
@@ -42,6 +43,12 @@ function DetailsPage(props) {
       <h1>Soz</h1>
     )
   }
+}
+
+DetailsPage.propTypes = {
+  country: PropTypes.object.isRequired,
+  addToWatch: PropTypes.func.isRequired,
+  watchList: PropTypes.array.isRequired
 }
 
 export default DetailsPage

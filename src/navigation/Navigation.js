@@ -3,6 +3,7 @@ import './Navigation.css';
 import { Link } from 'react-router-dom'
 import { render } from 'react-dom';
 import virus from '../assets/virus.svg'
+import PropTypes from 'prop-types'
 
 class Navigation extends Component {
   constructor(props) {
@@ -80,4 +81,8 @@ class Navigation extends Component {
   }
 }
 
+Navigation.propTypes = {
+  countries: PropTypes.array.isRequired,
+  goToCountry: PropTypes.func.isRequired
+}
 export default Navigation
