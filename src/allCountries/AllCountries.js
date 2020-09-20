@@ -24,15 +24,15 @@ function AllCountries (props) {
         <div key={counter++} className="card">
           <section className="recent-sect">
           <h1 className="country-name">{country.Country}<span className="country-code">({country.CountryCode})</span></h1>
-            <h2 className='stat'>New Confirmed: <span className="integer">{country.NewConfirmed}</span></h2>
-            <h2 className='stat'>New Deaths: <span className="integer">{country.NewDeaths}</span></h2>
-            <h2 className='stat'>New Recovered: <span className="integer">{country.NewRecovered}</span></h2>
+            <h2 className='stat'>New Confirmed: <span className="integer">{country.NewConfirmed.toLocaleString()}</span></h2>
+            <h2 className='stat'>New Deaths: <span className="integer">{country.NewDeaths.toLocaleString()}</span></h2>
+            <h2 className='stat'>New Recovered: <span className="integer">{country.NewRecovered.toLocaleString()}</span></h2>
           </section>
           <section className="button-holder">
            
             <div className={watched ? 'active' : null}>
               <button type="button" className='card-btn' onClick={() => props.addToWatch(country.Country)}>
-                <img src={eye} alt='virus' />
+                <img src={eye} alt='eye' />
               </button>
             </div>
   
