@@ -4,40 +4,40 @@
 }
 
 .card {
-    display: flex;
-    border-left: 5px solid red;
-    margin: 3em;
-    border-style: outset;
-    justify-content: space-between;
-        min-width: 36em;
+   display: flex;
+   border-left: 5px solid red;
+   margin: 3em;
+   border-style: outset;
+   justify-content: space-between;
+   min-width: 36em;
 }
 
-
  .country-code {
-       font-size: 0.50em;
+   font-size: 0.50em;
  }
 
  .card-btn {
    width: 4em;
    background: inherit;
-    border: none;
-    cursor: pointer;
+   border: none;
  }
+
  .stat {
-       padding: 0em 0em;
-    margin: 0.5em
+   padding: 0em 0em;
+   margin: 0.5em
  }
+
  .recent-sect {
-       font-size: .75em;
-           display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0em 2em;
+   font-size: .75em;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   padding: 0em 2em;
  }
 
- .integer {
+ /* .integer {
 
- }
+ } */
 
  .button-holder {
     display: flex;
@@ -45,7 +45,3 @@
     justify-content: center;
     align-items: center;
  }
- /* img {
-   width: 1em;
-   background: inherit
- }  */
