@@ -8,7 +8,7 @@ function WelcomePage(props) {
     return (
       <section className="welcome-page">
         <h1>Welcome</h1>
-        <p class='welcome-text'>This placeholder text is gonna be HUGE. You know, it really doesn’t matter what you write as long as you’ve got a young, and beautiful, piece of text. Look at that text! Would anyone use that? Can you imagine that, the text of your next webpage?! 
+        <p className='welcome-text'>This placeholder text is gonna be HUGE. You know, it really doesn’t matter what you write as long as you’ve got a young, and beautiful, piece of text. Look at that text! Would anyone use that? Can you imagine that, the text of your next webpage?! 
         <br /> <br />
         You have so many different things placeholder text has to be able to do, and I don't believe Lorem Ipsum has the stamina. All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously. That's to be expected. An 'extremely credible source' has called my office and told me that Lorem Ipsum's birth certificate is a fraud.
     <br /> <br />
