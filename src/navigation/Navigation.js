@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Navigation.css';
 import { Link } from 'react-router-dom'
 import { render } from 'react-dom';
-import '../assets/virus.svg'
+import virus from '../assets/virus.svg'
 
 class Navigation extends Component {
   constructor(props) {
@@ -12,9 +12,6 @@ class Navigation extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.setState({ goToCountry:})
-  // }
   findCountry = () => {
     this.props.country = this.state.goToCountry
 
@@ -24,15 +21,12 @@ class Navigation extends Component {
 
   }
   
-
   render() {
     let counter = 0
     let countryNames = this.props.countries.reduce((countryList, country) => {
-      
       countryList.push(country.Country)
       return countryList
     }, [])
-
     let renderedCountryList = countryNames.map(country => {
       return (
         <option key={counter++} value={country}>{country}</option>
@@ -40,13 +34,18 @@ class Navigation extends Component {
     })
     return (
       <article className='nav-bar'>
-        <h2>Resources</h2>
-        <Link to='allcountries'>
-          <button type='button' className='all-countries' >Go to All Countries</button>
+        <h2>Navigation</h2>
+        <h4>Go To All Countries Stats</h4>
+        <Link to='/allcountries'>
+          <button type='button' className='all-countries'>Go to All Countries</button>
         </Link>
+
+        <h4>Go To Your Watch List</h4>
         <Link to='/watchlist'>
           <button type='button' >Go to Watch List</button>
         </Link>
+
+        <h4>Search by Country</h4>
         <form className='form' >
           <select 
             name='country-select' 
@@ -71,8 +70,8 @@ class Navigation extends Component {
               <a href='https://www.youtube.com/watch?v=RYUe9XA1fQQ&list=LLIqzPn9ly0xhzdF8HfC6bBw&index=33&ab_channel=JeffNelson'> Official Covid Song of 2020</a>
           </div>
           <Link to='/'>
-            <button type='button'>
-              <img src='../assets/virus.svg' alt='virus' />
+            <button className='rtrn-btn' type='button'>
+              <img src={virus} alt='virus' />
             </button>
           </Link>
         

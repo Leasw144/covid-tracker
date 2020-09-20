@@ -18,22 +18,21 @@ class App extends Component {
       allCountries: [],
       global: {},
       countryOfInterest:{},
-      error: '',
+      notice: '',
       watchList: []
     }
   }
 
   componentDidMount = async () => {
-    console.log('app mounted')
     try {
       const summary = await getSummary()
-      console.log('summary', summary)
       this.setState({allCountries: summary.Countries, global: summary.Global })
       console.log(this.state)
     } catch(error) {
-      this.setState({error: error})
+      this.setState({notice: error})
     }
   }
+
   goToCountry = (value) => {
     const country = this.state.allCountries.find(country => country.Country === value)
     this.setState({ countryOfInterest: country })
@@ -44,6 +43,7 @@ class App extends Component {
     if(!watchedCountry) {
       const country = this.state.allCountries.find(country => country.Country === value)
       this.setState({ watchList: [...this.state.watchList, country]})
+      this.setState({ notice: 'Added to Watch List'})
     } else {
       return false
     }
@@ -57,19 +57,14 @@ class App extends Component {
   }
   render() {
     return (
-
       <main className="App">
-        <Header />
-        
+        <Header />       
         <section className="main-display">
           <Navigation 
-            // key='1'
             countries={this.state.allCountries} 
             goToCountry={this.goToCountry}
-          />
-            
+          />           
           <div className="content">
-              {/* <h1>hello world</h1> */}
             <Switch>
               <Route 
                 exact path='/' 
@@ -86,33 +81,37 @@ class App extends Component {
                     <DetailsPage
                       country={this.state.countryOfInterest}
                       addToWatch={this.addToWatch}
+                      watchList={this.state.watchList}
                     />
                   )
                 }}
               />
-            <Route 
-              exact path='/allcountries'
-              render={() => {
-                return (
-                  <AllCountries 
-                    countries={this.state.allCountries}
-                    goToCountry={this.goToCountry} 
-                    addToWatch={this.addToWatch}
-                    watchList={this.state.watchList}
-                  />
-                )
-              }}
-            />
-            <Route 
-              exact path='/watchlist'
-              render={() => {
-                return (
-                  <AllCountries
-                    countries={this.state.watchList}
-                    goToCountry={this.goToCountry} />
-                )
-              }}
-            />
+              <Route 
+                exact path='/allcountries'
+                render={() => {
+                  return (
+                    <AllCountries 
+                      countries={this.state.allCountries}
+                      goToCountry={this.goToCountry} 
+                      addToWatch={this.addToWatch}
+                      watchList={this.state.watchList}
+                      notice={this.state.notice}
+                    />
+                  )
+                }}
+              />
+              <Route 
+                exact path='/watchlist'
+                render={() => {
+                  return (
+                    <AllCountries
+                      countries={this.state.watchList}
+                      goToCountry={this.goToCountry} 
+                      addToWatch={this.addToWatch}
+                    />
+                  )
+                }}
+              />
             </Switch>
           </div>
         </section>

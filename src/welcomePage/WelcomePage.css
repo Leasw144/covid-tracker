@@ -5,3 +5,7 @@
 .welcome-title {
   font-size: 2em;
 }
+
+.welcome-text {
+  text-align: initial
+}

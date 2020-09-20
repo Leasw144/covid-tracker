@@ -14,23 +14,28 @@ function AllCountries (props) {
     console.log('watchlist', props.watchList)
     countryCards = countries.map(country => {
       let watched;
+      if(props.watchList) {
+        watched = props.watchList.find(watched => country.Country === watched.Country);
+      }
+      // console.log('watched', watched)
       
       console.log('country', country.Country)
       return (
         <div key={counter++} className="card">
           <section className="recent-sect">
           <h1 className="country-name">{country.Country}<span className="country-code">({country.CountryCode})</span></h1>
-            <h2 className='stat'>New Confirmed: <span className="integer">{country.NewConfirmed}</span></h2>
-            <h2 className='stat'>New Deaths: <span className="integer">{country.NewDeaths}</span></h2>
-            <h2 className='stat'>New Recovered: <span className="integer">{country.NewRecovered}</span></h2>
+            <h2 className='stat'>New Confirmed: <span className="integer">{country.NewConfirmed.toLocaleString()}</span></h2>
+            <h2 className='stat'>New Deaths: <span className="integer">{country.NewDeaths.toLocaleString()}</span></h2>
+            <h2 className='stat'>New Recovered: <span className="integer">{country.NewRecovered.toLocaleString()}</span></h2>
           </section>
           <section className="button-holder">
            
-              <button type="button" className="card-btn" onClick={() => props.addToWatch(country.Country)}>
-                <img src={eye} alt='virus' />
+            <div className={watched ? 'active' : null}>
+              <button type="button" className='card-btn' onClick={() => props.addToWatch(country.Country)}>
+                <img src={eye} alt='eye' />
               </button>
-            
-        
+            </div>
+  
          
             <Link to='/details'>
               <button className="card-btn" type='button' onClick={() => props.goToCountry(country.Country)}>
