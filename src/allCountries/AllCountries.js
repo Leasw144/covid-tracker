@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './AllCountries.css'
 import eye from '../assets/eye.svg';
 import info from '../assets/info.svg';
-import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function AllCountries (props) {
   let countries, countryCards;
   let counter = 0
-
   if(props.countries) {
     countries = props.countries
     console.log('watchlist', props.watchList)
@@ -17,9 +16,6 @@ function AllCountries (props) {
       if(props.watchList) {
         watched = props.watchList.find(watched => country.Country === watched.Country);
       }
-      // console.log('watched', watched)
-      
-      console.log('country', country.Country)
       return (
         <div key={counter++} className="card">
           <section className="recent-sect">
@@ -29,22 +25,17 @@ function AllCountries (props) {
             <h2 className='stat'>New Recovered: <span className="integer">{country.NewRecovered.toLocaleString()}</span></h2>
           </section>
           <section className="button-holder">
-           
             <div className={watched ? 'active' : null}>
               <button type="button" className='card-btn' onClick={() => props.addToWatch(country.Country)}>
                 <img src={eye} alt='eye' />
               </button>
-            </div>
-  
-         
+            </div>   
             <Link to='/details'>
               <button className="card-btn" type='button' onClick={() => props.goToCountry(country.Country)}>
                 <img  src={info} alt='details' />
-                {/* find more stats */}
               </button>
             </Link>
           </section>
-
         </div>
       )
     })
@@ -58,4 +49,11 @@ function AllCountries (props) {
   )
 }
 
+AllCountries.propTypes = {
+  countries: PropTypes.array.isRequired,
+  goToCountry: PropTypes.func.isRequired,
+  addToWatch: PropTypes.func.isRequired,
+  watchList: PropTypes.array.isRequired,
+  notice: PropTypes.string.isRequired
+}
 export default AllCountries
