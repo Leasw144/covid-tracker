@@ -27,7 +27,6 @@ class App extends Component {
     try {
       const summary = await getSummary()
       this.setState({allCountries: summary.Countries, global: summary.Global })
-      console.log(this.state)
     } catch(error) {
       this.setState({notice: error})
     }
