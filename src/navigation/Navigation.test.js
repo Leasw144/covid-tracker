@@ -7,7 +7,7 @@ import { createMemoryHistory } from 'history'
 import '@testing-library/jest-dom/extend-expect'
 
 describe('Navigation component', () => {
-  let navHeading, allCountryHeading, watchListHeading, searchHeading,thirdPartyHeading, countries, submit, allCountriesBtn, homeBtn, link1, link2, link3;
+  let navHeading, allCountryHeading, watchListHeading, searchHeading,thirdPartyHeading, countries, submit, allCountriesBtn, homeBtn, link1, link2, link3, countriesData;
   beforeEach(() => {
     countries = ['Afghanistan', 'Albania']
     render (
@@ -50,4 +50,5 @@ describe('Navigation component', () => {
     expect(link2).toBeInTheDocument()
     expect(link3).toBeInTheDocument()
   })
+  it()
 })

@@ -6,7 +6,7 @@ import { getSummary } from '../helpers/apiCalls.js'
 jest.mock('../helpers/apiCalls.js')
 
 describe('AllCountries', () => {
-  let mockedCountries, name1, name2, code1, code2, eyeBtn, infoBtn, newConf, newDeaths, newRecovered;
+  let mockedCountries, name1, name2, code1, code2, eyeBtn, infoBtn, newConf, newDeaths, newRecovered, mockAddToWatch;
   beforeEach(() => {
   mockedCountries = [{
     "Country": "ALA Aland Islands",
@@ -34,9 +34,15 @@ describe('AllCountries', () => {
     }]
 
   getSummary.mockResolvedValue(mockedCountries)
+
+  mockAddToWatch = jest.fn()
+
   render(
     <MemoryRouter>
-      <AllCountries countries={mockedCountries} />
+      <AllCountries 
+        countries={mockedCountries}
+        addToWatch={mockAddToWatch} 
+      />
     </MemoryRouter>
   )
 
