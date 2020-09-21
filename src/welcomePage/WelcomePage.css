@@ -9,3 +9,15 @@
 .welcome-text {
   text-align: initial
 }
+
+.smol-img {
+  height: 16px;
+}
+
+.global-stats {
+  border: 2px #1d3557 solid;
+    border-radius: 6px;
+    padding: 0em;
+    margin-top: 3em;
+    padding-bottom: 3em;
+}
