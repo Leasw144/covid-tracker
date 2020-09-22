@@ -2,9 +2,9 @@ import React from 'react'
 import './WelcomePage.css'
 import eye from '../assets/eye.svg'
 import info from '../assets/info.svg'
+import PropTypes from 'prop-types'
 
 function WelcomePage(props) {
-  console.log(props)
   let global = props.global
   if(props.global.NewConfirmed) {
     return (
@@ -38,4 +38,7 @@ function WelcomePage(props) {
     }
 }
 
+WelcomePage.propTypes = {
+  global: PropTypes.object.isRequired
+}
 export default WelcomePage
