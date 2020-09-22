@@ -111,6 +111,16 @@ class App extends Component {
                   )
                 }}
               />
+              <Route 
+                render={() => {
+                  return(
+                    <div>
+                      <h1>404! Sorry try again!</h1>
+                    </div>
+                  )
+                }}
+              />
+
             </Switch>
           </div>
         </section>
