@@ -1,13 +1,12 @@
 import React from 'react'
 import '@testing-library/jest-dom'
-import { render, screen, getAllByRole, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import Navigation from './Navigation.js'
 import { MemoryRouter } from 'react-router-dom'
-import { createMemoryHistory } from 'history'
 import '@testing-library/jest-dom/extend-expect'
 
 describe('Navigation component', () => {
-  let navHeading, allCountryHeading, watchListHeading, searchHeading,thirdPartyHeading, mockedCountries, submit, allCountriesBtn, homeBtn, link1, link2, link3, countriesData, mockedGoToCountry;
+  let navHeading, allCountryHeading, searchHeading,thirdPartyHeading, mockedCountries, submit, allCountriesBtn, homeBtn, link1, link2, link3, mockedGoToCountry, watchListHeading;
   beforeEach(() => {
     mockedCountries = [{
       "Country": "ALA Aland Islands",
@@ -54,12 +53,14 @@ describe('Navigation component', () => {
     expect(allCountryHeading).toBeInTheDocument()
     expect(searchHeading).toBeInTheDocument()
     expect(thirdPartyHeading).toBeInTheDocument()
+    expect(watchListHeading).toBeInTheDocument()
   })
   it('should render a submit button and return home button', () => {
     allCountriesBtn = screen.getByRole('button', { name: /go to all countries/i })
     homeBtn = screen.getByAltText('virus')
     expect(submit).toBeInTheDocument()
     expect(homeBtn).toBeInTheDocument()
+    expect(allCountriesBtn).toBeInTheDocument()
   })
   it('should render links to other sites', () => {
     link1 = screen.getByText('Top Stories')
