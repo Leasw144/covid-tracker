@@ -82,7 +82,7 @@ class Navigation extends Component {
 }
 
 Navigation.propTypes = {
-  countries: PropTypes.array.isRequired,
+  countries: PropTypes.array,
   goToCountry: PropTypes.func.isRequired
 }
 export default Navigation
