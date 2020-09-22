@@ -23,3 +23,21 @@ a {
   background: inherit;
   border: none;
 }
+
+.nav-btn {
+  background-color: #1d3557;
+  color: #f1faee;
+  border: none;
+  width: 100%;
+  height: 2em;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.combobox {
+  margin-bottom: 1em;
+}
+
+.submit {
+  width: 13em
+}

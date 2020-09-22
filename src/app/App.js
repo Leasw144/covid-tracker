@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from '../../node_modules/prop-types/prop-types';
-import { Route, Switch, Redirect } from 'react-router-dom'
-import logo from '../assets/logo.svg';
+import { Route, Switch } from 'react-router-dom'
 import './App.css';
-
 import Header from '../header/Header';
 import Navigation from '../navigation/Navigation';
 import DetailsPage from '../detailsPage/DetailsPage'
@@ -108,6 +105,15 @@ class App extends Component {
                       goToCountry={this.goToCountry} 
                       addToWatch={this.addToWatch}
                     />
+                  )
+                }}
+              />
+              <Route 
+                render={() => {
+                  return(
+                    <div>
+                      <h1>404! Sorry try again!</h1>
+                    </div>
                   )
                 }}
               />

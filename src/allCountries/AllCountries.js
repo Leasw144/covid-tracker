@@ -41,19 +41,20 @@ function AllCountries (props) {
     })
   } else {
     countryCards = <h1> Error finding countries </h1>
+    return countryCards
   }
   return (
     <div>
-      {countryCards}
+      {countryCards.length > 0 ? countryCards : <h1>Whoops! All Berries!</h1>}
     </div>
   )
 }
 
 AllCountries.propTypes = {
-  countries: PropTypes.array.isRequired,
-  goToCountry: PropTypes.func.isRequired,
-  addToWatch: PropTypes.func.isRequired,
-  watchList: PropTypes.array.isRequired,
-  notice: PropTypes.string.isRequired
+  countries: PropTypes.array,
+  goToCountry: PropTypes.func,
+  addToWatch: PropTypes.func,
+  watchList: PropTypes.array,
+  notice: PropTypes.string
 }
 export default AllCountries

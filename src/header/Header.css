@@ -7,16 +7,16 @@ header {
 
 .title {
   padding: 0em 1em;
-    font-size: 3em;
+  font-size: 3em;
 }
+
 .logo {
   height: 200px;
-      height: 8em;
-    padding: 1em;
-  
+  height: 8em;
+  padding: 1em;
 }
 
 .horz-holder {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
 }

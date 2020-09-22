@@ -25,7 +25,7 @@ describe('WelcomePage', () => {
       </MemoryRouter>
     )
     header = await screen.getByRole('heading', { name: /welcome/i })
-    text = screen.getByText(/this placeholder text/i)
+    text = screen.getByText(/Welcome to Covid-Track/i)
 
     globalHeading = screen.getByRole('heading', { name: /today's global stats/i })
     newConf = screen.getByText(/new confirmed:/i)
