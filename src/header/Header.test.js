@@ -3,7 +3,6 @@ import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import Header from './Header'
 import { MemoryRouter } from 'react-router-dom'
-// import { italics } from 'prop-types/lib/ReactPropTypesSecret';
 
 describe('Header', () => {
   let title, logo;
@@ -22,5 +21,4 @@ describe('Header', () => {
   it('should render the logo in the header', () => {
     expect(logo).toBeInTheDocument()
   })
-  
 })
