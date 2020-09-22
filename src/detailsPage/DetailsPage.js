@@ -20,17 +20,17 @@ function DetailsPage(props) {
           <span className='red'>{countryStats && countryStats.NewConfirmed.toLocaleString()}</span>
         </p>
         <p>New Reported Deaths: <span className='red'>{countryStats.NewDeaths.toLocaleString()}</span></p>
-        <p>New Recovered: <span className='red'>{countryStats.NewRecovered.toLocaleString()}</span></p>
+        <p>New Recovered: <span className='green'>{countryStats.NewRecovered.toLocaleString()}</span></p>
       </div>
     <br/>
       <h2 className='headline'>Overall</h2>
-      <p>Total Confirmed: <span className='green'>{countryStats.TotalConfirmed.toLocaleString()}</span></p>
-      <p>Total Deaths: <span className='green'>{countryStats.TotalDeaths.toLocaleString()}</span></p>
+      <p>Total Confirmed: <span className='red'>{countryStats.TotalConfirmed.toLocaleString()}</span></p>
+      <p>Total Deaths: <span className='red'>{countryStats.TotalDeaths.toLocaleString()}</span></p>
       <p>Total Recovered: <span className='green'>{countryStats.TotalRecovered.toLocaleString()}</span></p>
       <br />
       <div className='eye-area'>
         <h4>Add this Country to Your Watch List</h4>
-          <div className={watched ? 'active' : null} >
+          <div className={watched ? 'active' : 'details-btn'} >
             <button type="button" className='card-btn active' onClick={() => props.addToWatch(countryStats.Country)}>
               <img className='eye' src={eye} alt='Add to Watch' />
             </button>
