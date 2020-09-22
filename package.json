@@ -34,6 +34,8 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^11.0.4",
+    "eslint": "^7.9.0",
+    "eslint-plugin-react": "^7.20.6",
     "jest-environment-jsdom-sixteen": "^1.0.3"
   }
 }
