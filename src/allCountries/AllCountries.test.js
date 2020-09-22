@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import AllCountries from './AllCountries.js'
-import { MemoryRouter, BrowserRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 import { getSummary } from '../helpers/apiCalls.js'
 jest.mock('../helpers/apiCalls.js')
 
