@@ -22,7 +22,16 @@ This app seeks to aggregate relevant data of Coronavirus infection rates on a by
 8. To verify that it is setup correctly, run npm start in your terminal. Go to http://localhost:3000/ to interact with the application. Enter control + c in your terminal to stop the server at any time.
 
 ## Gif-travaganza
+1. Looking at all countries using the nav bar
+<br/>
+![All Countries](src/assets/allCountries-to-details.gif)
 
+2. Look at the Details Page
+<br/>
+![Navigating](src/assets/navigation-to-country.gif)
+
+3. Watch list
+![Navigating](src/assets/watchlist.gif)
 
 ## Reflections
 Testing aside, this project was a fun one to do because it related to something I was interested in which was taking a look at how countries were doing in regards to Coronavirus. The cool thing about the app was that while I was building it out and taking in live data from real sources, I found myself actually using the app to check on the certain countries I was interested in. 
@@ -31,7 +40,3 @@ For the project before this one, my stretch technology that we had decided to le
 
 ### Future Iterations
 Given the opportunity to revisit this project, I would like to add a sorting feature that allows users to sort by the number of cases a country might have. Additional ideas would be to calculate percent changes of a country between given dates as well as compare countries by a per capita basis. On a more technical level, more robust testing is clearly needed along with sad path testing that is also reflected in the DOM. 
-### Resources
-
-### Special Thanks
-Google, React Testing Docs, Kyle Wong
