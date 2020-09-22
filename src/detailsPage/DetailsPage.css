@@ -1,18 +1,18 @@
 .country-info {
   border: 1px solid #457b9d;
-      margin: 3em;
-    min-height: 32em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 2em;
-    max-width: 36em;
-        min-width: 36em;
+  margin: 3em;
+  min-height: 32em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2em;
+  max-width: 36em;
+  min-width: 36em;
 }
 
 p {
-      font-weight: bold;
-          margin: 0em;
+  font-weight: bold;
+  margin: 0em;
 }
 
 .headline {
@@ -23,16 +23,15 @@ p {
 
 .country-name {
   font-size: 4em;
-    padding: 0em;
-    display: flex;
-    padding-left: .5em;
-    /* padding-top: 0em; */
-    margin: .5em;
+  padding: 0em;
+  display: flex;
+  padding-left: .5em;
+  margin: .5em;
 }
 
 .eye-area {
-      display: flex;
-    width: 12em;
+  display: flex;
+  width: 12em;
 }
 
 .eye {
