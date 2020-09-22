@@ -23,11 +23,11 @@ This app seeks to aggregate relevant data of Coronavirus infection rates on a by
 
 ## Gif-travaganza
 1. Looking at all countries using the nav bar
-<br/>
+
 ![All Countries](src/assets/allCountries-to-details.gif)
 
 2. Look at the Details Page
-<br/>
+
 ![Navigating](src/assets/navigation-to-country.gif)
 
 3. Watch list
