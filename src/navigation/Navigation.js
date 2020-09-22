@@ -38,17 +38,18 @@ class Navigation extends Component {
         <h2>Navigation</h2>
         <h4>Go To All Countries Stats</h4>
         <Link to='/allcountries'>
-          <button type='button' className='all-countries'>Go to All Countries</button>
+          <button type='button' className='nav-btn all-countries'>Go to All Countries</button>
         </Link>
 
         <h4>Go To Your Watch List</h4>
         <Link to='/watchlist'>
-          <button type='button' >Go to Watch List</button>
+          <button className='nav-btn' type='button' >Go to Watch List</button>
         </Link>
 
         <h4>Search by Country</h4>
         <form className='form' >
           <select 
+            className='combobox'
             name='country-select' 
             value={this.state.goToCountry} 
             onChange={this.handleChange}
@@ -57,7 +58,7 @@ class Navigation extends Component {
             {renderedCountryList}
           </select>
           <Link to='/details'>
-            <button type='button' className='submit' onClick={() => this.props.goToCountry(this.state.country)}>submit</button>
+            <button type='button' className='nav-btn submit' onClick={() => this.props.goToCountry(this.state.country)}>submit</button>
             {/* on click, reassign the value of prop that contains country of interest to the state of goToCountry */}
           </Link>
         </form>
