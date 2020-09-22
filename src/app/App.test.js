@@ -3,8 +3,8 @@ import { render, screen, waitFor, fireEvent, getByText } from '@testing-library/
 import App from './App';
 import { BrowserRouter, Router } from 'react-router-dom'
 import '@testing-library/jest-dom/extend-expect'
-import { getSummary } from '../helpers/apiCalls.js'
-jest.mock('../helpers/apiCalls.js')
+// import { getSummary } from '../helpers/apiCalls.js'
+// jest.mock('../helpers/apiCalls.js')
 
 describe('App component', () => {
   it('should render the selected country\'s information', async () => {
@@ -45,7 +45,7 @@ describe('App component', () => {
         }
       ]
     }]
-    getSummary.mockResolvedValueOnce(countriesData)
+    // getSummary.mockResolvedValueOnce(countriesData)
 
       renderedApp = render(
         <BrowserRouter>
@@ -59,8 +59,20 @@ describe('App component', () => {
     fireEvent.change(dropdown, { target: { value: 'Afghanistan'}})
     fireEvent.click(submitBtn)
     const AFHeader = screen.getByText('Recents', {exact: false})
+
     expect(afghanistan).toBeInTheDocument()
     expect(AFHeader).toBeInTheDocument()
+
+    const addToWatchBtn = screen.getByRole('img', { name: /add to watch/i })
+
+    expect(addToWatchBtn).toBeInTheDocument()
+
+    const goToWatchListBtn = screen.getByRole('button', { name: /go to watch list/i })
+    fireEvent.click(addToWatchBtn)
+    fireEvent.click(goToWatchListBtn)
+    const AfCardHeader = screen.getByRole('heading', { name: /afghanistan \(af\)/i })
+
+    expect(AfCardHeader).toBeInTheDocument()
   })
 })
 
