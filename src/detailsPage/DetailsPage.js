@@ -32,7 +32,7 @@ function DetailsPage(props) {
         <h4>Add this Country to Your Watch List</h4>
           <div className={watched ? 'active' : null} >
             <button type="button" className='card-btn active' onClick={() => props.addToWatch(countryStats.Country)}>
-              <img className='eye' src={eye} alt='virus' />
+              <img className='eye' src={eye} alt='Add to Watch' />
             </button>
           </div>
       </div>
