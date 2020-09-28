@@ -15,7 +15,9 @@ describe('Navigation component', () => {
       "NewConfirmed": 0,
       "TotalConfirmed": 0,
       "NewDeaths": 0,
-      "TotalDeaths": 0,
+      "TotalDeaths": 
+      
+      0,
       "NewRecovered": 0,
       "TotalRecovered": 0,
       "Date": "2020-04-05T06:37:00Z"
